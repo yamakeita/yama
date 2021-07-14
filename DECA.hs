@@ -36,5 +36,5 @@ propMontgomeryIso2 x y = (toMontgomery x + toMontgomery y) `mod` n == toMontgome
 propMontgomeryIso3 :: Integer -> Integer -> Bool
 propMontgomeryIso3 x y = (toMontgomery x * toMontgomery y) `mod` n == toMontgomery ((x*y) `mod` n) -- should fail
 
--- montMult :: Integer -> Integer -> Integer
--- propMontgomeryIso4 x y = (toMontgomery x `multMont` toMontgomery y) `mod` n == toMontgomery ((x*y) `mod` n) -- should work
+montMult :: Integer -> Integer -> Integer
+propMontgomeryIso4 x y = (toMontgomery x `multMont` toMontgomery y)*r_inverse `mod` n == toMontgomery ((x*y) `mod` n) -- should work
